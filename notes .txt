@@ -1,0 +1,326 @@
+====================================================================================================================================================
+                                                            UNIT I:
+====================================================================================================================================================
+IMP : 
+        Scope Resolution Declarator : (::).
+        It is a special operator used to define a function outside the class.
+
+By default a class is always private.
+When using classes in a program: 
+                                Keyword Class, Name of Class, Opening bracket, Closing bracket, semi-colon.
+                                Class body = Private and Public Members.
+                                Class body = Data and Functions.
+                                To follow secure programming concepts, take data as private but functions as public.
+                                          |
+                                          |
+                                          |
+                                          V
+                                        Class
+                                    *           * 
+                                *                   *
+                            Data                      Functions
+                    (Should be Private)           (Should be Public)
+                    (Until asked otherwise)
+
+Alternative: 
+            As data is always one line and functions can be longer.
+            We are to use 2 options to write functions of class: 
+    
+            Method 1) 
+                    Function declared and defined inside the class.
+            Method 2)
+                    Function declared inside the class but it is defined outside the class. But it is only possible using special operator called
+                    Scope Resolution Operator (::).
+
+Importance of objects in array form: 
+                                     Array of object is a better approach if same kind of objects are to be used in a program.
+                                     It means one code can be used for multiple objects.
+                                     
+
+String vs Char[x] in CPP:
+                        String is a class in CPP.
+                        Char[x] is an array of characters.
+                        String is a better approach than Char[x] as it is a class and it has many functions which can be used to manipulate the data.
+                        Char[x] is a static array and it is not a class. So it has no functions to manipulate the data.
+
+How to convert string to char[x] and vice versa:
+                                                String to Char[x] = strcpy(char[x], string.c_str());
+                                                Char[x] to String = string = char[x];
+
+        
+ENUM :
+        Enumeration or Enumerators. (user defined)
+        Set of values which are related to each other.
+        ex: 
+                enum rainbow{violet, indigo, blue, green, yellow, orange, red};
+
+
+                The identifiers between { } are called enumerators.
+                The order of declaration is significant.
+                By default, the first enumerator is assigned the value of 0.
+                The value of each successive enumerator is increased by 1.
+                The value of the first enumerator can be explicitly set.
+
+Static : 
+        A static variable in a program is not re-initiazed every time the function is called.
+        It's recent value is retained and printed in the next call. It's recent value is available to all the objects of the class.
+        It is possible to use static member in a class as static data and static function.
+        Suppose, static data is used in a class, then it is mandatory to do the static data declaration outside the class.
+        
+        ex: 
+                class abc
+                {
+                    static int x;
+                };
+                int abc::x = 0;
+
+Inline Function:
+                A function which is defined inside the class and declared with the keyword inline.
+                It is used to reduce the function call overhead.
+                It is used to reduce the execution time of the program.
+
+When not to make func inline: 
+                             1) if a function contains loop.
+                             2) if a function contains static variable.
+                             3) if a function is recursive.
+                             4) for fucntions not having return values, if a return statement is used.
+                             5) if a function contains switch or goto statement.
+
+Manipulators: 
+        endl --> end line --> iostream.h --> <<endl;
+        dec, oct, hex -->set the desired number system --> iomanip.h --> <<dec;
+        setw --> set width --> iomanip.h --> <<setw(10);
+        setprecision --> set precision --> iomanip.h --> cout<<fixed<<setprecision(2);
+        setfill --> set fill character --> iomanip.h --> <<setfill('*');
+        setbase --> set base --> iomanip.h --> <<setbase(16);
+        setiosflags --> set ios flags --> iomanip.h --> <<setiosflags(ios::left);
+        resetiosflags --> reset ios flags --> iomanip.h --> <<resetiosflags(ios::left);
+        setf --> set format --> iomanip.h --> <<setf(ios::left, ios::adjustfield);
+        resetf --> reset format --> iomanip.h --> <<resetf(ios::left, ios::adjustfield);
+
+
+Function Overloading : 
+                        Passing larger data types or increasing number of arguments beyond functions capacity.
+                        It is possible to have multiple functions with same name but different arguments.
+                        It is also called as Compile Time Polymorphism.
+                        ex: 
+                                void abc(int x)
+                                void abc(int x, int y)
+                                void abc(float x)
+                                void abc(int x, float y)
+                                void abc(float x, int y)
+
+Friend Function or Friend Class:
+                                A friend function or class is a function or class which is not a member of the class but it can access 
+                                the private members of the class.
+                                It is used to access the private members of the class.
+                                ex: 
+                                        class abc
+                                        {
+                                            int x;
+                                            friend void xyz();
+                                        };
+                                        void xyz()
+                                        {
+                                            abc obj;
+                                            obj.x = 10;
+                                        }
+
+                                A friend function can be declared inside the class and defined outside the class.
+
+Pointers:
+        Some problems dusirng the use of pointers;
+                1. Uninitialized pointers (Wild pointers) -> not assigned to any memory location.
+                2. Memory leak. -> memory is allocated but not deallocated. (new is used but delete is not used)
+                3. Dangling pointers. -> pointer is pointing to a memory location which is already deallocated.
+                4. Memory corruption.
+                5. Array out of bound access.
+
+THIS POINTER:
+                It is a special pointer which is used to point to the current object.
+                It is used to access the data members of the current object.
+                It is used to access the member functions of the current object.
+                It is used to return the current object from the member functions.
+                It is used to differentiate between the local variable and the data member of the class.
+                It is used to access the static data members of the class.
+                It is used to access the static member functions of the class.
+
+String :
+        Manipulators:
+                insert(): inserts a string into another string.
+                erase(): erases a string from another string.
+                replace(): replaces a string with another string.
+                substr(): extracts a substring from a string.
+                find(): finds a substring in a string.
+                find(): finds a substring in a string from the right.
+                append(): appends a string to another string.
+                compare(): compares two strings.
+                length(): returns the length of a string. 
+                at(): returns the character at a particular position in a string.
+                find_first_of(): finds the first occurrence of a character in a string.
+                find_last_of(): finds the last occurrence of a character in a string.
+                getline(): for taking the string object value from user standard io function, until it encounters a new line.
+================================================================UNIT 4========================================================================================
+
+Restrictions on Operator Overloading:
+                                Operators that can be overloaded: 
+                                                                +, -,
+                                                                *, /,
+                                                                %, ^,
+                                                                &, |,
+                                                                ~, !,
+                                                                =, <, >,
+                                                                +=, -=,
+                                                                *=, /=,
+                                                                %=, ^=,
+                                                                &=, |=,
+                                                                <<, >>,
+                                                                <<=, >>=,
+                                                                ==, !=,
+                                                                <=, >=,
+
+                                Operators that can not be overloaded: 
+                                                                ., .*, 
+                                                                ::, ?:, 
+                                                                sizeof, 
+                                                                typeid, 
+                                                                new, delete, 
+                                                                new[], delete[], 
+                                                                (), [], 
+                                                                ->, ->*
+
+
+Function OverRiding :
+                     When a function is defined in the base class and the same function is defined in the derived class with the same name and same arguments.
+
+Create hierarchy for mother and 3 children and use function overriding:
+                                                                        class mother{
+                                                                                public:
+                                                                                        void display(){
+                                                                                                cout<<"Mother"<<endl;
+                                                                                        }
+                                                                        }
+                                                                        class child1: public
+                                                                        class child2 : public mother
+                                                                        {
+                                                                            public:
+                                                                                void display()
+                                                                                {
+                                                                                    cout<<"Child 2"<<endl;
+                                                                                }
+                                                                        };
+                                                                        class child3 : public mother
+                                                                        {
+                                                                            public:
+                                                                                void display()
+                                                                                {
+                                                                                    cout<<"Child 3"<<endl;
+                                                                                }
+                                                                        };
+
+Late Binding: 
+                When a function is called using a pointer, then the function call is resolved at run time.
+                It is also called as Dynamic Binding or Runtime Polymorphism.
+                It is possible only when the function is declared as virtual in the base class.
+                It is possible only when the function is defined in the derived class.
+                It is possible only when the function is called using a pointer.
+
+Polymorphism:
+                It is the ability of an object to take different forms.
+                It is of 2 types: 
+                                    1. Compile Time Polymorphism (Function Overloading, Operator Overloading)
+                                    2. Runtime Polymorphism (Function Overriding, Late Binding)
+
+Aggregation and Composition: 
+                                Aggregation: 
+                                        Delete a class and the other class will still exist and will be able to work.
+                                        ex: 
+                                                class A
+                                                {
+                                                    int x;
+                                                };
+                                                class B
+                                                {
+                                                    A obj;
+                                                };
+                                                class A is aggregated in class B.
+                                                Here class B is aggregated of class A.
+                                Composition:   
+                                        Delete a class and the other class will not exist and will not be able to work.
+                                        ex: 
+                                                class A
+                                                {
+                                                    int x;
+                                                };
+                                                class B
+                                                {
+                                                    A obj;
+                                                };
+                                                class A is composed in class B.
+
+                                                Here class B is composed of class A.
+
+Dynamic Memory Allocation:
+                        (DMA) :
+                                rather than static way of allocating space to int, float, string, double, etc... 
+                                we can use DMA to allocate space to these data types.
+                                It is done using new and delete operators.
+                                such as:
+                                                int *ptr = new int;
+                                                float *ptr = new float;
+                                                string *ptr = new string;
+                                                double *ptr = new double;
+        
+                                                delete ptr;  
+A = 65
+B = 66
+C = 67
+D = 68
+E = 69
+F = 70
+G = 71
+H = 72
+I = 73
+J = 74
+K = 75
+L = 76
+M = 77
+N = 78
+O = 79
+P = 80
+Q = 81
+R = 82
+S = 83
+T = 84
+U = 85
+V = 86
+W = 87
+X = 88
+Y = 89
+Z = 90
+a = 97
+b = 98
+c = 99
+d = 100
+e = 101
+f = 102
+g = 103
+h = 104
+i = 105
+j = 106
+k = 107
+l = 108
+m = 109
+n = 110
+o = 111
+p = 112
+q = 113
+r = 114
+s = 115
+t = 116
+u = 117
+v = 118
+w = 119
+x = 120
+y = 121
+z = 122
